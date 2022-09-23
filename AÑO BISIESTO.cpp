@@ -1,7 +1,6 @@
 #include <iostream>
 
 using namespace std;
-
 class Fecha
 { 
 private:
@@ -15,9 +14,6 @@ public:
 	void setFechita();
 };
 
-int main (){
-	system("color B8");
-}
 
 void Fecha::setFechita()
 {
@@ -37,37 +33,39 @@ void Fecha::setFechita()
 		cout<<"El dia es: ";
 		f.setDia();
 	}
+		
+	
 }
 
 void Fecha::setDia()
 {
 	if (mes == 1 || mes == 3 || mes == 5 || mes ==7 || mes ==8 || mes == 10 || mes == 12)
 	{
-		if (dia=>1 || dia<=31)
+		if (dia>0 || dia<=31)
 		{ 
 		cout<<"Dia valido";
 		}
 	}
-	else if (Setbisiesto() == true)
+	else if (setBisiesto() == true)
 	{
-		if(mes==2 && dia==29)
-		{
-			cout<<"Dia valido";
-		}
-		else(mes==2 && dia=>30)
-		{
-			cout<<"Dia invalido";
-		}		
+		if (mes==2 && dia<=29)
+			{
+				cout<<"Dia valido";
+			}
+		else if (mes==2 && dia>=29)
+			{
+				cout<<"Dia invalido";
+			}		
 	}
 }	
 
 void Fecha::setMes()
 {
-	if (mes=>1 && mes<=12)
+	if (mes>=1 && mes<=12)
 	{ 
 		cout<<"Mes valido";
 	}
-	else  (mes>12)
+	else if (mes>12)
 	{
 		cout<<"Mes invalido";
 	}
@@ -83,7 +81,7 @@ bool Fecha::setBisiesto()
 	{
 		return true;
 	}
-	else if(year%400 !0)
+	else if(year%400 !=0)
 	{
 		return false;
 	}
@@ -91,4 +89,8 @@ bool Fecha::setBisiesto()
 	{
 		return true;
 	}
+}
+
+int main (){
+	system("color B8");
 }
