@@ -48,10 +48,12 @@ void Fecha::setDia()
 		cout<<"Dia valido";
 		}
 	}
-	else if (bisiesto == true)
+	else if (Setbisiesto() == true)
 	{
-		if(mes==2 && dia=29)
-		cout<<"Dia valido";
+		if(mes==2 && dia==29)
+		{
+			cout<<"Dia valido";
+		}
 		else(mes==2 && dia=>30)
 		{
 			cout<<"Dia invalido";
