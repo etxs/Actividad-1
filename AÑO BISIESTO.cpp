@@ -93,4 +93,6 @@ bool Fecha::setBisiesto()
 
 int main (){
 	system("color B8");
+	Fecha fechita;
+	fechita.setFechita();
 }
